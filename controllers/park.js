@@ -9,10 +9,17 @@ const Park = require('../models/park');
     3) .put()
     4) .delete()
 */
+//INDUCES
+//new
+router.get('/parks/new', (req, res) => {
+    res.render('new.ejs')
+});
 
 //create
 router.post('/parks', (req, res) => {
-    res.send(req.body)
+    Park.create(req.body, (error, createdPark) => {
+        res.send(createdPark)
+    });
 });
 
 module.exports = router;
