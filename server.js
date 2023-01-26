@@ -22,9 +22,18 @@ db.on('error',(err) => {
 db.on('connected', () => {
     console.log('mongo connected');
 });
+
 //mount middleware
+//body parser middleware
+app.use(express.urlencoded({ extended: false }));
 
 //mount routes
+
+//create
+app.post('/parks', (req, res) => {
+    res.send(req.body)
+});
+
 
 //tell app to listen on designated port
 app.listen(PORT, () => {
