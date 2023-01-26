@@ -32,4 +32,13 @@ router.post('/parks', (req, res) => {
     });
 });
 
+//show
+router.get('/parks/:id', (req, res) => {
+    Park.findById(req.params.id, (err, foundPark) => {
+        res.render('show.ejs', {
+            park: foundPark,
+        });
+    });
+});
+
 module.exports = router;
