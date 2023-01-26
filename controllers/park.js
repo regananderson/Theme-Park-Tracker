@@ -10,6 +10,16 @@ const Park = require('../models/park');
     4) .delete()
 */
 //INDUCES
+
+//index
+router.get('/parks', (req, res) => {
+    Park.find({},(error, allParks) => {
+        res.render('index.ejs', {
+            parks: allParks,
+        });
+    });
+});
+
 //new
 router.get('/parks/new', (req, res) => {
     res.render('new.ejs')
@@ -18,7 +28,7 @@ router.get('/parks/new', (req, res) => {
 //create
 router.post('/parks', (req, res) => {
     Park.create(req.body, (error, createdPark) => {
-        res.send(createdPark)
+        res.redirect('/parks')
     });
 });
 
