@@ -1,6 +1,7 @@
 //require dependencies
 const express = require('express');
 const mongoose = require('mongoose');
+const parkRouter = require('./controllers/park');
 
 //initialize express app
 const app = express();
@@ -8,6 +9,7 @@ const app = express();
 //configure settings
 require('dotenv').config();
 const PORT = process.env.PORT;
+const DATABASE_URL = process.env.DATABASE_URL;
 
 //configure database
 mongoose.set('strictQuery', true);
@@ -28,11 +30,7 @@ db.on('connected', () => {
 app.use(express.urlencoded({ extended: false }));
 
 //mount routes
-
-//create
-app.post('/parks', (req, res) => {
-    res.send(req.body)
-});
+app.use(parkRouter);
 
 
 //tell app to listen on designated port
