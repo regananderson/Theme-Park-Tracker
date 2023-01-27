@@ -25,6 +25,12 @@ router.get('/parks/new', (req, res) => {
     res.render('new.ejs')
 });
 
+//destroy
+router.delete('/parks/:id', (req, res) => {
+    res.send('deleting ...');
+});
+
+
 //create
 router.post('/parks', (req, res) => {
     Park.create(req.body, (error, createdPark) => {
