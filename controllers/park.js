@@ -1,7 +1,7 @@
 const { application } = require('express');
 const express = require('express');
 const router = express.Router();
-// const data = require('../data');
+const data = require('../data');
 const Park = require('../models/park');
 /*
     1) .get()
@@ -10,6 +10,13 @@ const Park = require('../models/park');
     4) .delete()
 */
 //INDUCES
+
+//seed
+router.get('/parks/seed', (req, res) => {
+    Park.create(data, (err, park) => {
+        res.redirect('/parks')
+    });
+});
 
 //index
 router.get('/parks', (req, res) => {
@@ -27,7 +34,9 @@ router.get('/parks/new', (req, res) => {
 
 //destroy
 router.delete('/parks/:id', (req, res) => {
-    res.send('deleting ...');
+    Park.findByIdAndDelete(req.params.id, (err, data) => {
+       res.redirect('/parks') ;
+    });
 });
 
 
