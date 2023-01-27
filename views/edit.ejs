@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Page</title>
+</head>
+<body>
+    <h1>EDITING <%= park.name %></h1>
+    <form action="/parks/<%= park._id %>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="<%= park.name %>">
+        Description: <input type="text" name="description" value="<%= park.description %>">
+        Location: <input type="text" name="location" value="<%= park.location %>">
+        IMG_URL:<input type="text" name="img" value="<%= park.img %>">
+        <input type="submit" value="Submit Changes">
+    </form>
+    
+</body>
+</html>

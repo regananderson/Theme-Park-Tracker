@@ -39,11 +39,34 @@ router.delete('/parks/:id', (req, res) => {
     });
 });
 
+//update
+router.put('/parks/:id', (req, res) => {
+    Park.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {
+            new: true,
+        },
+        (error, updatedPark) => {
+            res.redirect(`/parks/${req.params.id}`)
+        }
+    )
+})
+
 
 //create
 router.post('/parks', (req, res) => {
     Park.create(req.body, (error, createdPark) => {
         res.redirect('/parks')
+    });
+});
+
+//edit
+router.get('/parks/:id/edit', (req, res) => {
+    Park.findById(req.params.id, (error, foundPark) => {
+        res.render('edit.ejs', {
+            park: foundPark,
+        });
     });
 });
 
