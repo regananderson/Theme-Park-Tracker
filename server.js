@@ -2,6 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const parkRouter = require('./controllers/park');
+const methodOverride = require('method-override');
 
 //initialize express app
 const app = express();
@@ -28,6 +29,8 @@ db.on('connected', () => {
 //mount middleware
 //body parser middleware
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
+
 
 //mount routes
 app.use(parkRouter);
