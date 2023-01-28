@@ -5,21 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <nav>
-        <a href="/parks">BACK TO ALL PARKS</a>
-    </nav>
-    <h1><%= park.name %></h1>
-    <br>
-    <img src="<%= park.img; %>" alt="">
-    <br>
-    DESC: <%= park.description %>
-    <br>
-    LOCATION: <%= park.location %>
-    <br>
-    <form action="/parks/<%= park._id %>?_method=DELETE" method="POST">
-        <input type="submit" value="DELETE">
-    </form>
-    <a href="/parks/<%= park._id %>/edit">Edit</a>
+    <header>
+        <div class="title-header">
+            <h1 class="title">THEME PARK TRACKER </h1>
+            <h3 class="title">THRILL SEEKERS WELCOME.</h3>
+        </div>
+    </header>
+
+    <div class="show-container">
+
+        <div class="nav">
+            <a href="/parks">
+                <button>
+                BACK TO ALL PARKS
+                </button>
+            </a>
+            <br>
+            <br>
+            <img src="<%= park.img; %>" alt="" class="show-pic">
+            <br>
+            <br>
+            <a href="/parks/<%= park._id %>/edit" class="edit">
+                <button>
+                    EDIT
+                </button>
+            </a>
+            <br>
+            <br>
+            <form action="/parks/<%= park._id %>?_method=DELETE" method="POST" class="delete">
+                <input type="submit" value="DELETE">
+            </form>
+        </div>
+        
+        <div class="info">
+            <h1 class="park-info"><%= park.name %> </h1>
+            <h2 class="park-info"> <%= park.location %></h2> 
+            <h3 class="park-desc">ABOUT: </h3>
+            <p class="desc"><%= park.description %></p>
+        </div>
+
+        <div class="comments">
+            <h1>COMMENTS:</h1>
+            <br>
+            <button>
+                ADD COMMENT
+            </button>
+        </div>
+    </div>
+    <footer >
+        <p>©Thrill Seekers United</p>
+    </footer>
 </html>

@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Page</title>
+    <title>Edit <%= park.name %></title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>EDITING <%= park.name %></h1>
+    <header>
+        <div class="title-header">
+            <h1 class="title">THEME PARK TRACKER </h1>
+            <h3 class="title">THRILL SEEKERS WELCOME.</h3>
+        </div>
+    </header>
+    <br>
+    <a href="/parks/<%= park._id %>">
+        <button>
+        Back To <%= park.name %>
+        </button>
+    </a>
+    <h1>Editing <%= park.name %></h1>
+    <br>
+    <div class="edit-form">
     <form action="/parks/<%= park._id %>?_method=PUT" method="POST">
-        Name: <input type="text" name="name" value="<%= park.name %>">
-        Description: <input type="text" name="description" value="<%= park.description %>">
-        Location: <input type="text" name="location" value="<%= park.location %>">
-        IMG_URL:<input type="text" name="img" value="<%= park.img %>">
-        <input type="submit" value="Submit Changes">
+        <div class="edit-box"> 
+            Name: <br><textarea name="name" cols="100" rows="1"><%= park.name %></textarea><br><br>
+            Description:<br><textarea name="description" cols="100" rows="3"><%= park.description %></textarea><br><br>
+            Location:<br><textarea name="location" cols="100" rows="1"><%= park.location %></textarea><br><br>
+            Image (URL): <br><textarea name="img" cols="100" rows="1"><%= park.img %></textarea><br>
+            <input type="submit" value="Submit Changes">
+        </div>
     </form>
+    </div>
     
 </body>
 </html>

@@ -30,6 +30,7 @@ db.on('connected', () => {
 //body parser middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use(express.static('public'));
 
 
 //mount routes

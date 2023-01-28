@@ -5,15 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add a New Park</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+    <header>
+        <div class="title-header">
+            <h1 class="title">THEME PARK TRACKER </h1>
+            <h3 class="title">THRILL SEEKERS WELCOME.</h3>
+        </div>
+    </header>
+    <br>
+    <br>
+    <a href="/parks">
+        <button>
+        BACK TO ALL PARKS
+        </button>
+    </a>
     <h1>ADD A NEW PARK</h1>
-    <form action="/parks" method="POST">
-        Park Name: <input type="text" name="name">
-        Description: <input type="text" name="description">
-        Location: <input type="text" name="location">
-        IMG: <input type="text" name="img">
-        <input type="submit" name="" value="ADD NEW PARK">
-    </form>
+    <div class="new-form">
+        <form action="/parks" method="POST">
+            <div class="new-box">
+                Park Name: <br><textarea name="name" cols="100" rows="1"></textarea><br><br>
+                Description: <br><textarea name="description" cols="100" rows="1"></textarea><br><br>
+                Location:<br><textarea name="location" cols="100" rows="1"></textarea><br><br>
+                Image (URL): <br><textarea name="img" cols="100" rows="1"></textarea><br>
+                <input type="submit" name="" value="ADD NEW PARK">
+            </div>
+        </form>
+    </div>
 </body>
 </html>

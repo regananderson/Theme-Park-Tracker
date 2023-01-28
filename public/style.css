@@ -1,0 +1,111 @@
+body{
+    text-align: center;
+}
+header{
+    background-image: url('/coaster.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: 100%;
+    font-size: 40px;
+    text-align: center;
+    height: 300px;
+}
+.title-header{
+    background-color: rgba(255, 255, 255, 0.695); 
+    height: 300px;
+    padding: 100px;
+}
+.title{
+    margin: 0 auto;
+}
+button{
+    background-color: #6796c676;
+    height: 50px;
+    width: 150px;
+    border-radius: 50px;
+}
+
+.index-img{
+    height: 200px;
+    width: 275px;
+    border: 5px solid black;
+}
+.container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+.park{
+    padding: 15px;
+}
+.show-container{
+    display: grid;
+    grid-template-areas: 
+    'left center right';
+    grid-template-columns: .5fr 1fr .5fr;
+    margin: 30px;
+    height: 500px;
+}
+.nav{
+    grid-area: 'left';
+    text-align: center;
+}
+.info{
+    grid-area: 'center';
+    text-align: left;
+    padding: 20px;
+}
+.comments{
+    grid-area: 'right';
+    text-align: center;
+    background-color: #6796c676;
+    border-radius: 25px;
+}
+.park-info{
+    margin: 5px;
+    padding: 0;
+}
+.park-desc{
+    margin-top: 30px;
+    margin-bottom: 0;
+    padding: 0;
+}
+.desc{
+    margin-top: 5px;
+    padding: 0;
+}
+
+.show-pic{
+    height: 300px;
+    width: 400px;
+    border: 5px solid black;
+}
+.delete, .edit{
+    display: inline-block;
+}
+.delete{
+    align-content: left;
+}
+
+footer{
+    background-color: #6797C6;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    /* position: absolute; */
+}
+.edit-form, .new-form{
+    text-align: center;
+    font-size: 30px;
+}
+.edit-box, .new-box{
+    text-align: left;
+    background-color: #6796c690;
+    padding: 20px;
+    border-radius: 30px;
+    border: 3px solid black;
+    display: inline-block;
+}
