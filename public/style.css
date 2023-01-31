@@ -1,5 +1,14 @@
-body{
+html, body {
+    height: 100%;
+    width: 100%;
     text-align: center;
+  }
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Helvetica;
+
 }
 header{
     background-image: url('/coaster.png');
@@ -18,11 +27,15 @@ header{
 .title{
     margin: 0 auto;
 }
-button{
+#title-subtitle{
+    font-family: 'Waiting for the Sunrise', cursive;
+    font-size: 60px;
+}
+button, .btn{
     background-color: #6796c676;
     height: 50px;
     width: 150px;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
 .index-img{
@@ -60,7 +73,7 @@ button{
     grid-area: 'right';
     text-align: center;
     background-color: #6796c676;
-    border-radius: 25px;
+    border-radius: 10px;
 }
 .park-info{
     margin: 5px;
@@ -95,6 +108,7 @@ footer{
     height: 100px;
     width: 100%;
     overflow: hidden;
+    margin-top: 50px;
     /* position: absolute; */
 }
 .edit-form, .new-form{
@@ -104,8 +118,14 @@ footer{
 .edit-box, .new-box{
     text-align: left;
     background-color: #6796c690;
-    padding: 20px;
-    border-radius: 30px;
-    border: 3px solid black;
+    padding: 40px;
+    border-radius: 10px;
     display: inline-block;
+    margin: 20px;
 }
+
+/* 768px breakpoint w for tablets
+@media only screen and (min-width: 768px) {
+
+
+} */
