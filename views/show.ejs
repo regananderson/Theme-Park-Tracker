@@ -14,6 +14,7 @@
             <h3 class="title">THRILL SEEKERS WELCOME.</h3>
         </div>
     </header>
+    <%- include('./partials/nav') %>
 
     <div class="show-container">
 
@@ -33,10 +34,10 @@
                     EDIT
                 </button>
             </a>
-            <br>
-            <br>
+            
+           
             <form action="/parks/<%= park._id %>?_method=DELETE" method="POST" class="delete">
-                <input type="submit" value="DELETE">
+                <input type="submit" class="btn" value="DELETE">
             </form>
         </div>
         
@@ -49,13 +50,16 @@
 
         <div class="comments">
             <h1>COMMENTS:</h1>
-            <br>
-            <button>
-                ADD COMMENT
-            </button>
+            <hr>
+            <p><%= park.comment %></p>
+            <hr>
+            <form action="/parks/<%= park._id %>/comments?_method=PUT" method="POST">
+                <textarea name="comment" cols="30" rows="1"></textarea><br><br>
+                <input type="submit" class="btn" value="add comment">
+            </form>
         </div>
     </div>
-    <footer >
+    <footer>
         <p>©Thrill Seekers United</p>
     </footer>
 </html>

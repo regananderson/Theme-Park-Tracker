@@ -14,6 +14,7 @@
             <h3 class="title">THRILL SEEKERS WELCOME.</h3>
         </div>
     </header>
+    <%- include('./partials/nav') %>
     <br>
     <a href="/parks/<%= park._id %>">
         <button>
@@ -29,10 +30,14 @@
             Description:<br><textarea name="description" cols="100" rows="3"><%= park.description %></textarea><br><br>
             Location:<br><textarea name="location" cols="100" rows="1"><%= park.location %></textarea><br><br>
             Image (URL): <br><textarea name="img" cols="100" rows="1"><%= park.img %></textarea><br>
-            <input type="submit" value="Submit Changes">
         </div>
+        <br><input type="submit" class="btn" value="Submit Changes">
+            
     </form>
     </div>
     
 </body>
+<footer>
+    <p>©Thrill Seekers United</p>
+</footer>
 </html>

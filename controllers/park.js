@@ -2,6 +2,7 @@ const { application } = require('express');
 const express = require('express');
 const router = express.Router();
 const data = require('../data');
+const commentData = require('../comment_data'); //USE THIS DATA FOR COMMENT ROUTE
 const Park = require('../models/park');
 /*
     1) .get()
@@ -52,6 +53,22 @@ router.put('/parks/:id', (req, res) => {
         }
     )
 })
+//comment
+router.put('/parks/:id/comments', (req, res) => {
+    Park.findByIdAndUpdate(
+        req.params.id, 
+        {$push: {comment: req.body.comment}},
+        {new: true}
+    )
+    .then(newComment => {
+        const all = Park.find()
+        .populate('comment')
+        .then(result => res.json(result))
+        .catch(err => res.json(err))
+        return all
+    })
+    .catch(err => res.json(err))
+    });
 
 
 //create
@@ -64,11 +81,13 @@ router.post('/parks', (req, res) => {
 //edit
 router.get('/parks/:id/edit', (req, res) => {
     Park.findById(req.params.id, (error, foundPark) => {
+        console.log(foundPark)
         res.render('edit.ejs', {
             park: foundPark,
         });
     });
 });
+
 
 //show
 router.get('/parks/:id', (req, res) => {

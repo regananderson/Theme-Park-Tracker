@@ -34,6 +34,9 @@ app.use(express.static('public'));
 
 
 //mount routes
+app.get('/', (req, res) => res.render('home.ejs')
+);
+
 app.use(parkRouter);
 
 

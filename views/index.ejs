@@ -6,15 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Parks</title>
     <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="title-header">
             <h1 class="title">THEME PARK TRACKER </h1>
-            <h3 class="title">THRILL SEEKERS WELCOME.</h3>
+            <h3 class="title" id="title-subtitle">THRILL SEEKERS WELCOME.</h3>
         </div>
     </header>
-    <br>
+    <%-include('./partials/nav')%>
     <br>
     <div class="container">
         <% parks.forEach(park => { %>
