@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
+    <%-include('./partials/head') %>
 <body>
     <header>
         <div class="title-header">
@@ -18,7 +12,7 @@
 
     <div class="show-container">
 
-        <div class="nav">
+        <div class="side">
             <a href="/parks">
                 <button>
                 BACK TO ALL PARKS
@@ -51,8 +45,10 @@
         <div class="comments">
             <h1>COMMENTS:</h1>
             <hr>
-            <p><%= park.comment %></p>
-            <hr>
+            <p><% park.comment.forEach(parkComment => { %>
+                <p  class="park-comment"><%= parkComment.comment %></p>
+                <hr>
+            <% }) %></p>
             <form action="/parks/<%= park._id %>/comments?_method=PUT" method="POST">
                 <textarea name="comment" cols="30" rows="1"></textarea><br><br>
                 <input type="submit" class="btn" value="add comment">

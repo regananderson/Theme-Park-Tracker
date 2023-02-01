@@ -9,6 +9,9 @@
 <body>
     <%- include('./partials/nav') %>
     <h1>please login</h1>
+    <% if (error) { %>
+        <p><%= error %></p>
+    <% } %>
     <form action="/login" method="POST" autocomplete="off">
         <label>
             Email: 
