@@ -60,9 +60,35 @@ button, .btn{
     margin: 30px;
     height: 500px;
 }
-.nav{
+.nav-items{
+    background-color: #6797C6;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+li{
+    float: left;
+}
+li:last-child{
+    float: right;
+}
+.nav-link{
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.nav-link:hover{
+    background-color: aliceblue;
+}
+/* #active{
+    background-color: purple;
+} */
+
+.side{
     grid-area: 'left';
     text-align: center;
+    display: inline;
 }
 .info{
     grid-area: 'center';
@@ -75,6 +101,10 @@ button, .btn{
     background-color: #6796c676;
     border-radius: 10px;
 }
+.park-comment{
+    display: inline-block;
+}
+
 .park-info{
     margin: 5px;
     padding: 0;
