@@ -6,6 +6,10 @@ const parkSchema = new Schema({
     description: String,
     location: String,
     img: String,
+    comment: [
+        {type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}
+    ],
+    // user: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 
 module.exports = mongoose.model('Park', parkSchema);
