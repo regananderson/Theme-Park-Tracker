@@ -43,14 +43,20 @@ app.use(session({
 //     console.log(req.session)
 //     next();
 // })
+app.use((req, res, next) => {
+    if(req.session.userId){
+        res.locals.user = req.session.userId;
+    } else {
+        res.locals.user = null;
+    }
+    next();
+});
 
 //authentication middleware
 function isAuthenticated(req, res, next) {
     if(!req.session.userId) {
-        res.locals.user = null;
         return res.redirect('/login');
     }
-    res.locals.user = req.session.userId;
     next();
 };
 

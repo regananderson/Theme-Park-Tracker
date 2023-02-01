@@ -12,6 +12,7 @@ module.exports = [
         description: "Islands of Adventure is modeled after a journey of exploration, where guests embark on an adventure to visit a variety of themed islands. Initially, the park featured six islands. A seventh, The Wizarding World of Harry Potter, was added in 2010, themed to the highly successful Harry Potter franchise. It was Universal's largest investment since the resort's founding in 1990. The expansion led to a significant increase in attendance, and in 2013, Islands of Adventure ranked seventh domestically and eleventh internationally after hosting approximately 8.1 million guests. The eighth island, Skull Island, opened on July 13, 2016, and is themed to the King Kong franchise.",
         location: 'Orlando, Florida',
         img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/TheIncredibleHulkCoaster.jpg/440px-TheIncredibleHulkCoaster.jpg',
+
       },
       {
         id: 3,
@@ -19,6 +20,7 @@ module.exports = [
         description: "Universal Studios Florida (also known as Universal Studios or USF) is a theme park located in Orlando, Florida. Primarily themed to movies, television and other aspects of the entertainment industry, the park opened to the public on June 7, 1990. It is owned and operated by NBCUniversal and features numerous rides, attractions and live shows. Universal Studios Florida was the first component of the larger Universal Orlando Resort to open, ranking eleventh in the world and sixth in North America for attendance among amusement parks in 2019 while hosting approximately 10.9 million visitors.",
         location: 'Orlando, Florida',
         img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/USF_Entrance.jpg/500px-USF_Entrance.jpg',
+
       },
       {
         id: 4,
@@ -26,6 +28,7 @@ module.exports = [
         description: "Disney's Animal Kingdom Theme Park is a zoological theme park at the Walt Disney World Resort in Bay Lake, Florida, near Orlando. Owned and operated by The Walt Disney Company through its Parks, Experiences and Products division, it is the largest theme park in the world, covering 580 acres (230 ha). The park opened on Earth Day, April 22, 1998, and was the fourth theme park built at the resort. The park is dedicated and themed around natural environment and animal conservation, a philosophy once pioneered by Walt Disney.",
         location: 'Orlando, Florida',
         img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Floating_Mountain_and_Goblin_Thistle_in_the_Valley_of_Mo%27ara_%2833546059874%29.jpg/600px-Floating_Mountain_and_Goblin_Thistle_in_the_Valley_of_Mo%27ara_%2833546059874%29.jpg',
+
       },
       {
         id: 5,
@@ -33,6 +36,7 @@ module.exports = [
         description: "Dollywood is a theme park jointly owned by entertainer Dolly Parton and Herschend Family Entertainment. It is located in the Knoxville metropolitan area in Pigeon Forge, Tennessee, near the gateway to The Great Smoky Mountains. Hosting nearly 3 million guests in a typical season from mid-March to the Christmas holidays, Dollywood is the biggest ticketed tourist attraction in Tennessee. It has won many international awards.",
         location: 'Pigeon Forge, Tennessee',
         img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/DW_Wild_Eagle.JPG/580px-DW_Wild_Eagle.JPG',
+
       },
       {
         id: 6,
@@ -40,6 +44,7 @@ module.exports = [
         description: "Busch Gardens Tampa Bay is a 335-acre (136 ha) animal theme park located in Tampa, Florida, United States, with the entire park landscaped and designed around themes of Africa and Asia. Owned and operated by SeaWorld Parks & Entertainment, the park opened on June 1, 1959. The park has an annual attendance consistently exceeding 4 million, often ranking second among SeaWorld parks behind SeaWorld Orlando. The park features many roller coasters and thrill rides, including a Dive Coaster called SheiKra, a 'family-style' thrill coaster (with one inversion and three launches) themed around cheetahs called Cheetah Hunt, a launched roller coaster called Tigris, a classic seated steel roller coaster called Kumba, a wood-steel hybrid hypercoaster called Iron Gwazi, Falcon's Fury (the second-tallest free-standing drop tower in North America, and one of few to tilt and face riders towards the ground), and Montu, which was the tallest and fastest inverted roller coaster in the world when it opened. The park also features several rides and attractions aimed for children under the age of nine, as well as two water rides — a river rafting ride and a classic log flume.",
         location: 'Tampa, Florida',
         img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/SheiKraSeating8x3.jpg/440px-SheiKraSeating8x3.jpg',
+
       },
       {
         id: 7,
@@ -47,6 +52,7 @@ module.exports = [
         description: "Cedar Point is a 364-acre (147 ha) amusement park located on a Lake Erie peninsula in Sandusky, Ohio, United States. Opened in 1870, it is considered the second-oldest operating amusement park in the U.S. behind Lake Compounce. Cedar Point is owned and operated by Cedar Fair and is the flagship of the amusement park chain. Known as 'America's Roller Coast', the park features 15 roller coasters – fourth-most in the world with Six Flags Great America, behind Canada's Wonderland and Energylandia (17), as well as Six Flags Magic Mountain (20). Cedar Point's most recent roller coaster, Steel Vengeance, opened to the public on May 5, 2018.",
         location: 'Sandusky, Ohio',
         img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Millennium_Force_%28Cedar_Point%29_06.JPG/440px-Millennium_Force_%28Cedar_Point%29_06.JPG',
+
       },
       {
         id: 8,
