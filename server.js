@@ -1,8 +1,10 @@
 //require dependencies
 const express = require('express');
 const mongoose = require('mongoose');
-const parkRouter = require('./controllers/park');
 const methodOverride = require('method-override');
+const session = require('express-session');
+const parkRouter = require('./controllers/park');
+const usersRouter = require('./controllers/users');
 
 //initialize express app
 const app = express();
@@ -31,13 +33,32 @@ db.on('connected', () => {
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
+app.use(session({
+    secret: 'thisissupersecret',
+    resave: false,
+    saveUninitialized: false,
+}));
 
+// app.use((req, res, next) => {
+//     console.log(req.session)
+//     next();
+// })
+
+//authentication middleware
+function isAuthenticated(req, res, next) {
+    if(!req.session.userId) {
+        res.locals.user = null;
+        return res.redirect('/login');
+    }
+    res.locals.user = req.session.userId;
+    next();
+};
 
 //mount routes
-app.get('/', (req, res) => res.render('home.ejs')
-);
+app.get('/', (req, res) => res.render('home.ejs'));
 
-app.use(parkRouter);
+app.use(usersRouter);
+app.use(isAuthenticated, parkRouter);
 
 
 //tell app to listen on designated port
