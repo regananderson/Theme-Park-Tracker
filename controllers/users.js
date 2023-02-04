@@ -13,7 +13,7 @@ router.post('/signup', (req, res) => {
     let error = null;
 
     if(req.body.password !== req.body.passwordConf) {
-        error = 'password must match confirmation to continue';
+        error = 'Password and confirmation must match to continue';
         return res.render('signup.ejs', {error})
     }
 
@@ -32,7 +32,7 @@ router.get('/login', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-    const error = 'bad credentials';
+    const error = 'Email and password combination not found';
     User.findOne({
         email: req.body.email
     }, (err, foundUser) => {
@@ -52,7 +52,7 @@ router.post('/login', (req, res) => {
 //logout users
 router.get('/logout', (req, res) => {
     req.session.destroy((err) => {
-        res.redirect('/login')
+        res.redirect('/')
     });
 });
 

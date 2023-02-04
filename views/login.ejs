@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Please Login</title>
-</head>
+    <%-include('./partials/head') %>
 <body>
+    <%-include('./partials/header')%>
     <%- include('./partials/nav') %>
-    <h1>please login</h1>
-    <% if (error) { %>
-        <p><%= error %></p>
-    <% } %>
-    <form action="/login" method="POST" autocomplete="off">
-        <label>
-            Email: 
-            <input type="email" name="email" required>
-        </label>
-        <label>
-            Password:
-            <input type="password" name="password" required>
-        </label>
-        <input type="submit" value="Login">
-    </form>
+        
+        <h1>Login</h1>
+        <% if (error) { %>
+            <p class="signon-error"><%= error %></p>
+        <% } %>
+        <div class="login-form">
+            <form action="/login" method="POST" autocomplete="off">
+                <label>
+                    Email: 
+                    <input type="email" name="email" required>
+                </label>
+                
+                <label>
+                    Password:
+                    <input type="password" name="password" required>
+                </label>
+                <br><br>
+                <input type="submit" class="btn" value="Login">
+            </form>
+        </div>
 </body>
+<%- include('./partials/footer') %>
 </html>

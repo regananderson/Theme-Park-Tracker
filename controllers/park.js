@@ -55,6 +55,25 @@ router.put('/parks/:id', (req, res) => {
         }
     )
 })
+
+//like
+// router.put('/parks/:id/like', (req, res) => {
+//     // res.send(req.body)
+//     // console.log(req.params)
+//     // console.log(req.body)
+//     Comment.findOne(req.params.id, (err, foundComment) => {
+//        console.log(foundComment)
+//     //    let newQty = foundProduct.qty
+//     //    newQty -= 1
+//     //    foundProduct.qty = newQty;
+//     //    foundProduct.save()
+//     //    console.log(foundComment.comment)
+//     //    res.render('show.ejs', {
+//     //     comment: foundComment,
+//     // });
+//     });
+// });
+
 //comment
 router.put('/parks/:id/comments', (req, res) => {
     Comment.create(req.body, (err, createdComment) => {

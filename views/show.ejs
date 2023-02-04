@@ -10,7 +10,7 @@
         <div class="side">
             <a href="/parks">
                 <button>
-                BACK TO ALL PARKS
+                Back to All Parks
                 </button>
             </a>
             <br>
@@ -20,13 +20,13 @@
             <br>
             <a href="/parks/<%= park._id %>/edit" class="edit">
                 <button>
-                    EDIT
+                    Edit
                 </button>
             </a>
             
            
             <form action="/parks/<%= park._id %>?_method=DELETE" method="POST" class="delete">
-                <input type="submit" class="btn" value="DELETE">
+                <input type="submit" class="btn" value="Delete">
             </form>
         </div>
         
@@ -38,19 +38,27 @@
         </div>
 
         <div class="comments">
-            <h1>COMMENTS:</h1>
+            <h1>Comment Below:</h1>
             <hr>
             <p><% park.comment.forEach(parkComment => { %>
                 <p  class="park-comment"><%= parkComment.comment %></p>
+                <!-- <form action="/parks/<%= park._id %>/like?_method=PUT" method="POST">
+                    <input type="submit" value="LIKE">
+                </form> -->
                 <hr>
             <% }) %></p>
             <form action="/parks/<%= park._id %>/comments?_method=PUT" method="POST">
                 <textarea name="comment" cols="30" rows="1"></textarea><br><br>
-                <input type="submit" class="btn" value="add comment">
+                <input type="submit" class="btn" value="Add comment">
             </form>
+
+            
         </div>
+       
     </div>
-    <footer>
-        <p>©Thrill Seekers United</p>
-    </footer>
+    <div class="footer">
+            ©Thrill Seekers United
+    </div>
+</body>
+
 </html>

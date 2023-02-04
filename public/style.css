@@ -8,6 +8,8 @@ html, body {
 }
 body{
     font-family: Helvetica;
+    height: 100vh;
+    margin: 0;
 
 }
 header{
@@ -37,6 +39,9 @@ button, .btn{
     width: 150px;
     border-radius: 10px;
 }
+.add-new, #add-new{
+    margin-bottom: 70px;
+}
 
 .index-img{
     height: 200px;
@@ -47,7 +52,7 @@ button, .btn{
     display: grid;
     grid-template-columns: auto auto auto auto;
     justify-content: space-evenly;
-    margin: 20px;
+    margin: 40px;
 }
 .park{
     padding: 15px;
@@ -55,17 +60,21 @@ button, .btn{
 .show-container{
     display: grid;
     grid-template-areas: 
-    'left center right';
+    'left center right'
+    'footer footer footer';
     grid-template-columns: .5fr 1fr .5fr;
+    grid-template-rows: 1fr 1fr;
     margin: 30px;
     height: 500px;
+    justify-content: space-evenly;
 }
 .nav-items{
-    background-color: #6797C6;
+    background-color: #6796c6b1;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    position: sticky;
 }
 li{
     float: left;
@@ -74,17 +83,14 @@ li:last-child{
     float: right;
 }
 .nav-link{
+    color: white;
     display: block;
-    padding: 14px 16px;
+    padding: 18px;
     text-decoration: none;
 }
-.nav-link:hover{
-    background-color: aliceblue;
+.nav-link:hover, button:hover, .btn:hover{
+    background-color: rgb(33, 57, 78);
 }
-/* #active{
-    background-color: purple;
-} */
-
 .side{
     grid-area: 'left';
     text-align: center;
@@ -100,6 +106,8 @@ li:last-child{
     text-align: center;
     background-color: #6796c676;
     border-radius: 10px;
+    margin-bottom: 70px;
+    padding: 20px;
 }
 .park-comment{
     display: inline-block;
@@ -131,27 +139,74 @@ li:last-child{
     align-content: left;
 }
 
-footer{
-    background-color: #6797C6;
-    left: 0;
+
+.footer{
+    grid-area: 'footer';
+    background-color: #6796c6b1;
+    position: fixed;
     bottom: 0;
-    height: 100px;
+    height: 50px;
     width: 100%;
-    overflow: hidden;
+    padding: 15px;
     margin-top: 50px;
-    /* position: absolute; */
+    color: white;
+    text-align: left;
 }
-.edit-form, .new-form{
+footer{
+    grid-area: 'footer';
+    background-color: #6796c6b1;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    padding: 15px;
+    margin-top: 50px;
+    color: white;
+    text-align: left;
+}
+.edit-form, .new-form, .login-form{
     text-align: center;
     font-size: 30px;
 }
-.edit-box, .new-box{
+.edit-box, .new-box, .login-form, .signup-form{
     text-align: left;
     background-color: #6796c690;
     padding: 40px;
     border-radius: 10px;
     display: inline-block;
     margin: 20px;
+}
+
+.home-container{
+    height: 252px;
+    width: auto;
+    display: grid;
+    grid-template-areas: 
+    'left right';
+    grid-template-columns: .1fr 1fr;
+    box-shadow: 5px 10px 18px 5px;
+    margin: 30px;
+
+}
+
+.home-gif{
+    grid-area: 'left';
+}
+.home-pic{
+    width: 450px;
+}
+.home-info{
+    grid-area: 'right';
+    padding: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    text-align: left;
+}
+.home-subtitle, .home-link{
+    font-size: 20px;
+}
+.signon-error{
+    color: red;
 }
 
 /* 768px breakpoint w for tablets

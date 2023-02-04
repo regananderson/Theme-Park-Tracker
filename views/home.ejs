@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Theme Park Tracker</title>
-</head>
+    <%-include('./partials/head') %>
+
 <body>
+    <%-include('./partials/header')%>
     <%- include('./partials/nav') %>
-    <h1>Welcome to Theme Park Tracker</h1>
+    <div class="home-container"> 
+        <div class="home-gif">
+            <img src="/coaster_gif.webp" class="home-pic">
+        </div>
+        <div class="home-info">
+            <!-- <h1>Theme Park Tracker</h1> -->
+            <!-- <p class="home-subtitle">Welcome to the place built for theme park enthusiasts! </p> -->
+            <p class="home-subtitle">Hi there friend,<br><br>
+                Welcome to the Theme Park Tracker. Comment on your favorite parks and tell us what makes it your favorite.
+                If you don't see your favorite park on the list, feel free to add it and tell other
+                enthusiasts why they should go check it out! <br>
+                Login or create an account to enter. <br><br>
+    
+                -Thrill Seekers United</p>
+            <!-- <a href="/signup" class="home-link">Sign up</a>
+            <br>
+            <a href="/login" class="home-link">Log in</a> -->
+        </div>
+     </div>
 </body>
+<%- include('./partials/footer') %>
 </html>
