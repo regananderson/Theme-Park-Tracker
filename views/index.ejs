@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <%-include('./partials/head') %>
+
 <body>
     <%-include('./partials/header')%>
     <%-include('./partials/nav')%>
     <br>
     <div class="container">
         <% parks.forEach(park => { %>
-            <div class="park">
-                <a href="/parks/<%= park._id; %>">
+        <div class="park">
+            <a href="/parks/<%= park._id; %>">
                 <img src="<%= park.img; %>" alt="" class="index-img">
                 <br>
-                 <%= park.name %>
-                </a>
-                <br>
-            </div>
+                <%= park.name %>
+            </a>
+            <br>
+        </div>
         <% }) %>
     </div>
     <a href="/parks/new" class="add-new">
         <button class="add-new">
-                ADD NEW PARK 
-        </button>   
+            Add a New Park
+        </button>
     </a>
     <br>
     <br>
 </body>
 <%- include('./partials/footer') %>
+
 </html>

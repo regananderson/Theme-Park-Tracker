@@ -1,18 +1,22 @@
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
     text-align: center;
-  }
-*{
+}
+
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: Helvetica;
     height: 100vh;
     margin: 0;
 
 }
-header{
+
+header {
     background-image: url('/coaster.png');
     background-repeat: no-repeat;
     background-size: 100%;
@@ -21,54 +25,69 @@ header{
     text-align: center;
     height: 300px;
 }
-.title-header{
-    background-color: rgba(255, 255, 255, 0.695); 
+
+.title-header {
+    background-color: rgba(255, 255, 255, 0.695);
     height: 300px;
-    padding: 100px;
+    padding: 80px;
 }
-.title{
+
+.title {
     margin: 0 auto;
 }
-#title-subtitle{
+
+#title-subtitle {
     font-family: 'Waiting for the Sunrise', cursive;
-    font-size: 60px;
+    font-size: 40px;
 }
-button, .btn{
+
+button,
+.btn {
     background-color: #6796c676;
     height: 50px;
     width: 150px;
     border-radius: 10px;
 }
-.add-new, #add-new{
+
+.add-new,
+#add-new,
+#comment-btn,
+#edit-btn,
+#login-btn,
+#signup-btn {
     margin-bottom: 70px;
 }
 
-.index-img{
+.index-img {
     height: 200px;
     width: 275px;
     border: 5px solid black;
 }
-.container{
+
+.container {
     display: grid;
     grid-template-columns: auto auto auto auto;
     justify-content: space-evenly;
     margin: 40px;
 }
-.park{
+
+.park {
     padding: 15px;
 }
-.show-container{
+
+.show-container {
     display: grid;
-    grid-template-areas: 
-    'left center right'
-    'footer footer footer';
+    grid-template-areas:
+        'left center right'
+        'footer footer footer';
     grid-template-columns: .5fr 1fr .5fr;
     grid-template-rows: 1fr 1fr;
     margin: 30px;
     height: 500px;
     justify-content: space-evenly;
 }
-.nav-items{
+
+.nav-items {
     background-color: #6796c6b1;
     list-style-type: none;
     margin: 0;
@@ -76,71 +95,93 @@ button, .btn{
     overflow: hidden;
     position: sticky;
 }
-li{
+
+li {
     float: left;
 }
-li:last-child{
+
+li:last-child {
     float: right;
 }
-.nav-link{
+
+.nav-link {
     color: white;
     display: block;
     padding: 18px;
     text-decoration: none;
 }
-.nav-link:hover, button:hover, .btn:hover{
+
+.nav-link:hover,
+button:hover,
+.btn:hover {
     background-color: rgb(33, 57, 78);
 }
-.side{
+
+.side {
     grid-area: 'left';
     text-align: center;
     display: inline;
 }
-.info{
+
+.info {
     grid-area: 'center';
     text-align: left;
     padding: 20px;
+
 }
-.comments{
+
+.comments {
     grid-area: 'right';
+
+}
+
+.comment-body {
     text-align: center;
     background-color: #6796c676;
     border-radius: 10px;
-    margin-bottom: 70px;
+    margin-bottom: 10px;
     padding: 20px;
-}
-.park-comment{
-    display: inline-block;
+    padding-bottom: 10px;
 }
 
-.park-info{
+.park-comment {
+    display: inline-block;
+    font-size: 15px;
+}
+
+.park-info {
     margin: 5px;
     padding: 0;
 }
-.park-desc{
+
+.park-desc {
     margin-top: 30px;
     margin-bottom: 0;
     padding: 0;
 }
-.desc{
+
+.desc {
     margin-top: 5px;
     padding: 0;
 }
 
-.show-pic{
+.show-pic {
     height: 300px;
     width: 400px;
     border: 5px solid black;
 }
-.delete, .edit{
+
+.delete,
+.edit {
     display: inline-block;
 }
-.delete{
+
+.delete {
     align-content: left;
 }
 
 
-.footer{
+.footer {
     grid-area: 'footer';
     background-color: #6796c6b1;
     position: fixed;
@@ -152,7 +193,8 @@ li:last-child{
     color: white;
     text-align: left;
 }
-footer{
+
+footer {
     grid-area: 'footer';
     background-color: #6796c6b1;
     position: fixed;
@@ -164,11 +206,19 @@ footer{
     color: white;
     text-align: left;
 }
-.edit-form, .new-form, .login-form{
+
+.edit-form,
+.new-form,
+.login-form,
+.signup-form {
     text-align: center;
     font-size: 30px;
 }
-.edit-box, .new-box, .login-form, .signup-form{
+
+.edit-box,
+.new-box,
+.signup-box,
+.login-box {
     text-align: left;
     background-color: #6796c690;
     padding: 40px;
@@ -177,40 +227,236 @@ footer{
     margin: 20px;
 }
 
-.home-container{
+.home-container {
     height: 252px;
     width: auto;
     display: grid;
-    grid-template-areas: 
-    'left right';
+    grid-template-areas:
+        'left right';
     grid-template-columns: .1fr 1fr;
     box-shadow: 5px 10px 18px 5px;
     margin: 30px;
 
 }
 
-.home-gif{
+.home-gif {
     grid-area: 'left';
 }
-.home-pic{
+
+.home-pic {
     width: 450px;
 }
-.home-info{
+
+.home-info {
     grid-area: 'right';
     padding: 10px;
     padding-right: 30px;
     padding-left: 30px;
     text-align: left;
 }
-.home-subtitle, .home-link{
+
+.home-subtitle {
     font-size: 20px;
 }
-.signon-error{
+
+.signon-error {
     color: red;
 }
 
-/* 768px breakpoint w for tablets
-@media only screen and (min-width: 768px) {
+textarea,
+input {
+    width: 360px;
+}
 
+@media only screen and (max-width: 620px) {
 
-} */
+    /* breakpoint for mobile device */
+    body {
+        height: 100vh;
+        margin: 0;
+        font-family: helvetica;
+    }
+
+    header {
+        background-image: url('/coaster.png');
+        height: 100px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-attachment: 100%;
+
+        text-align: center;
+
+    }
+
+    .show-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        display: grid;
+        grid-template-areas:
+            'left'
+            'center'
+            'right';
+        padding: 30px;
+    }
+
+    .comments {
+        margin: 10px;
+
+        font-size: 10px;
+
+    }
+
+    .title-header {
+        background-color: rgba(255, 255, 255, 0.695);
+        height: 100px;
+        margin-top: 0;
+        padding: 20px;
+
+    }
+
+    .title {
+        margin: 0 auto;
+        font-size: 25px;
+    }
+
+    #title-subtitle {
+        font-family: 'Waiting for the Sunrise', cursive;
+        font-size: 20px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: space-evenly;
+        margin: 40px;
+    }
+
+    .edit-box,
+    .new-box,
+    .signup-box,
+    .login-box {
+        width: 300px;
+    }
+
+    textarea,
+    input {
+        width: 220px;
+    }
+
+    #edit-btn {
+        margin-bottom: 70px;
+    }
+
+    .home-container {
+        height: 500px;
+        width: auto;
+        display: grid;
+        grid-template-areas:
+            'left'
+            'right';
+        grid-template-columns: auto;
+        box-shadow: 5px 10px 18px 5px;
+        margin: 30px;
+
+    }
+
+    .home-pic {
+        width: 344px;
+    }
+
+    .home-subtitle {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1007px) {
+
+    /* breakpoint for tablet */
+    body {
+        height: 100vh;
+        margin: 0;
+        font-family: helvetica;
+    }
+
+    header {
+        background-image: url('/coaster.png');
+        height: 150px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-attachment: 100%;
+
+        text-align: center;
+
+    }
+
+    .show-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        display: grid;
+        grid-template-areas:
+            'left'
+            'center'
+            'right';
+        padding: 30px;
+    }
+
+    .comments {
+        margin: 10px;
+        font-size: 10px;
+    }
+
+    .title-header {
+        background-color: rgba(255, 255, 255, 0.695);
+        height: 150px;
+        margin-top: 0;
+        padding: 20px;
+    }
+
+    .title {
+        margin: 0 auto;
+        font-size: 50px;
+    }
+
+    #title-subtitle {
+        font-family: 'Waiting for the Sunrise', cursive;
+        font-size: 30px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-evenly;
+        margin: 40px;
+    }
+
+    .edit-box,
+    .new-box,
+    .signup-box,
+    .login-box {
+        width: 450px;
+    }
+
+    #edit-btn {
+        margin-bottom: 70px;
+    }
+
+    .home-container {
+        height: 196px;
+        width: auto;
+        display: grid;
+        grid-template-areas:
+            'left right';
+        grid-template-columns: auto;
+        box-shadow: 5px 10px 18px 5px;
+        margin: 30px;
+
+    }
+
+    .home-pic {
+        width: 350px;
+    }
+
+    .home-subtitle {
+        font-size: 14px;
+    }
+}

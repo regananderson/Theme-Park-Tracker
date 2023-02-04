@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('./partials/head') %>
+<%-include('./partials/head') %>
+
 <body>
     <%-include('./partials/header')%>
     <%- include('./partials/nav') %>
-        
-        <h1>Login</h1>
-        <% if (error) { %>
-            <p class="signon-error"><%= error %></p>
-        <% } %>
-        <div class="login-form">
-            <form action="/login" method="POST" autocomplete="off">
+    <h1>Login</h1>
+    <% if (error) { %>
+    <p class="signon-error"><%= error %></p>
+    <% } %>
+    <div class="login-form">
+        <form action="/login" method="POST" autocomplete="off">
+            <div class="login-box">
                 <label>
-                    Email: 
-                    <input type="email" name="email" required>
+                    Email: <br>
+                    <input type="email" name="email" required><br> <br>
                 </label>
-                
+
                 <label>
-                    Password:
-                    <input type="password" name="password" required>
+                    Password: <br>
+                    <input type="password" name="password" required><br><br>
                 </label>
-                <br><br>
-                <input type="submit" class="btn" value="Login">
-            </form>
-        </div>
+            </div>
+            <br><input type="submit" class="btn" id="login-btn" value="Login">
+
+        </form>
+    </div>
 </body>
 <%- include('./partials/footer') %>
+
 </html>

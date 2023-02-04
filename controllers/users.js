@@ -4,17 +4,20 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt');
 
 //sign up users
-
 router.get('/signup', (req, res) => {
-    res.render('signup.ejs', {error: null});
+    res.render('signup.ejs', {
+        error: null
+    });
 });
 
 router.post('/signup', (req, res) => {
     let error = null;
 
-    if(req.body.password !== req.body.passwordConf) {
+    if (req.body.password !== req.body.passwordConf) {
         error = 'Password and confirmation must match to continue';
-        return res.render('signup.ejs', {error})
+        return res.render('signup.ejs', {
+            error
+        })
     }
 
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
@@ -28,7 +31,9 @@ router.post('/signup', (req, res) => {
 
 //login users
 router.get('/login', (req, res) => {
-    res.render('login.ejs', {error: null});
+    res.render('login.ejs', {
+        error: null
+    });
 });
 
 router.post('/login', (req, res) => {
@@ -37,12 +42,16 @@ router.post('/login', (req, res) => {
         email: req.body.email
     }, (err, foundUser) => {
         if (!foundUser) {
-            return res.render('login.ejs', {error});
+            return res.render('login.ejs', {
+                error
+            });
         }
         const isMatched = bcrypt.compareSync(req.body.password, foundUser.password);
 
-        if(!isMatched) {
-            return res.render('login.ejs', {error});
+        if (!isMatched) {
+            return res.render('login.ejs', {
+                error
+            });
         }
         req.session.userId = foundUser._id;
         res.redirect('/parks');

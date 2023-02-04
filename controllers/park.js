@@ -1,8 +1,9 @@
-const { application } = require('express');
+const {
+    application
+} = require('express');
 const express = require('express');
 const router = express.Router();
 const data = require('../data');
-const commentData = require('../comment_data'); //USE THIS DATA FOR COMMENT ROUTE
 const Park = require('../models/park');
 const Comment = require('../models/comments');
 
@@ -23,7 +24,7 @@ router.get('/parks/seed', (req, res) => {
 
 //index
 router.get('/parks', (req, res) => {
-    Park.find({},(error, allParks) => {
+    Park.find({}, (error, allParks) => {
         res.render('index.ejs', {
             parks: allParks,
         });
@@ -38,7 +39,7 @@ router.get('/parks/new', (req, res) => {
 //destroy
 router.delete('/parks/:id', (req, res) => {
     Park.findByIdAndDelete(req.params.id, (err, data) => {
-       res.redirect('/parks') ;
+        res.redirect('/parks');
     });
 });
 
@@ -46,8 +47,7 @@ router.delete('/parks/:id', (req, res) => {
 router.put('/parks/:id', (req, res) => {
     Park.findByIdAndUpdate(
         req.params.id,
-        req.body,
-        {
+        req.body, {
             new: true,
         },
         (error, updatedPark) => {
@@ -56,39 +56,26 @@ router.put('/parks/:id', (req, res) => {
     )
 })
 
-//like
-// router.put('/parks/:id/like', (req, res) => {
-//     // res.send(req.body)
-//     // console.log(req.params)
-//     // console.log(req.body)
-//     Comment.findOne(req.params.id, (err, foundComment) => {
-//        console.log(foundComment)
-//     //    let newQty = foundProduct.qty
-//     //    newQty -= 1
-//     //    foundProduct.qty = newQty;
-//     //    foundProduct.save()
-//     //    console.log(foundComment.comment)
-//     //    res.render('show.ejs', {
-//     //     comment: foundComment,
-//     // });
-//     });
-// });
 
 //comment
 router.put('/parks/:id/comments', (req, res) => {
     Comment.create(req.body, (err, createdComment) => {
         Park.findByIdAndUpdate(
-            req.params.id, 
-            {$push: {comment: createdComment}},
-            {new: true}
+                req.params.id, {
+                    $push: {
+                        comment: createdComment
+                    }
+                }, {
+                    new: true
+                }
             )
-        .then(newComment => {
-            res.redirect(`/parks/${req.params.id}`)
-        })
-        .catch(err => res.json(err))
+            .then(newComment => {
+                res.redirect(`/parks/${req.params.id}`)
+            })
+            .catch(err => res.json(err))
 
     });
-    });
+});
 
 
 //create
@@ -111,18 +98,10 @@ router.get('/parks/:id/edit', (req, res) => {
 
 //show
 router.get('/parks/:id', (req, res) => {
-    // Park.findOne({_id: req.params.id}, (err, foundPark) => {
-    //     console.log(foundPark)
-    //     Comment.find().where('_id').in(foundPark.comments).exec((err, comments) => {
-    //         console.log(comments)
-    //         res.render('show.ejs', {
-    //             park: foundPark,
-    //             comments: comments
-    //         });
 
-    //     });
-    // });
-    Park.findOne({_id: req.params.id}).populate('comment').exec((err, foundPark) => {
+    Park.findOne({
+        _id: req.params.id
+    }).populate('comment').exec((err, foundPark) => {
         console.log(foundPark)
         res.render('show.ejs', {
             park: foundPark,

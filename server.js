@@ -21,7 +21,7 @@ mongoose.connect(process.env.DATABASE_URL);
 //database connection error/success
 const db = mongoose.connection;
 
-db.on('error',(err) => {
+db.on('error', (err) => {
     console.log(err.message + ' is mongo not running?');
 });
 db.on('connected', () => {
@@ -30,7 +30,9 @@ db.on('connected', () => {
 
 //mount middleware
 //body parser middleware
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+    extended: false
+}));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
 app.use(session({
@@ -39,12 +41,9 @@ app.use(session({
     saveUninitialized: false,
 }));
 
-// app.use((req, res, next) => {
-//     console.log(req.session)
-//     next();
-// })
+
 app.use((req, res, next) => {
-    if(req.session.userId){
+    if (req.session.userId) {
         res.locals.user = req.session.userId;
     } else {
         res.locals.user = null;
@@ -54,7 +53,7 @@ app.use((req, res, next) => {
 
 //authentication middleware
 function isAuthenticated(req, res, next) {
-    if(!req.session.userId) {
+    if (!req.session.userId) {
         return res.redirect('/login');
     }
     next();

@@ -8,19 +8,27 @@
     <br>
     <a href="/parks">
         <button>
-        BACK TO ALL PARKS
+        Back to All Parks
         </button>
     </a>
-    <h1>ADD A NEW PARK</h1>
+    <h1>Add a New Park</h1>
     <div class="new-form">
         <form action="/parks" method="POST">
             <div class="new-box">
-                Park Name: <br><textarea name="name" cols="100" rows="1"></textarea><br><br>
-                Description: <br><textarea name="description" cols="100" rows="1"></textarea><br><br>
-                Location:<br><textarea name="location" cols="100" rows="1"></textarea><br><br>
-                Image (URL): <br><textarea name="img" cols="100" rows="1"></textarea><br>
+                <label>
+                    Park Name: <br><textarea name="name" cols="100" rows="1"></textarea><br><br>
+                </label>
+                <label>
+                    Description: <br><textarea name="description" cols="100" rows="1"></textarea><br><br>
+                </label>
+                <label>
+                    Location:<br><textarea name="location" cols="100" rows="1"></textarea><br><br>
+                </label>
+                <label>
+                    Image (URL): <br><textarea name="img" cols="100" rows="1"></textarea><br>
+                </label>
             </div>
-            <br><input type="submit" class="btn" id="add-new" value="ADD NEW PARK">
+            <br><input type="submit" class="btn" id="add-new" value="Add New Park">
         </form>
     </div>
 </body>

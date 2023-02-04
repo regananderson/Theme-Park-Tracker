@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('./partials/head') %>
+<%-include('./partials/head') %>
+
 <body>
     <%-include('./partials/header')%>
     <%-include('./partials/nav')%>
     <h1>Sign Up</h1>
     <% if (error) { %>
-        <p class="signon-error"><%= error %></p>
+    <p class="signon-error"><%= error %></p>
     <% } %>
     <div class="signup-form">
         <form action="/signup" method="POST">
-            <label>
-                Email:
-                <input type="email" name="email" required>
-            </label>
-            <label>
-                Password:
-                <input type="password" name="password" required>
-        </label>
-        <label>
-            Password Confirmation:
-            <input type="password" name="passwordConf" required>
-    </label>
-    <br><br>
-        <input type="submit" class="btn" value="Sign Up">
+            <div class="signup-box">
+                <label>
+                    Email: <br>
+                    <input type="email" name="email" required><br><br>
+                </label>
+
+                <label>
+                    Password: <br>
+                    <input type="password" name="password" required><br><br>
+                </label>
+
+                <label>
+                    Password Confirmation: <br>
+                    <input type="password" name="passwordConf" required><br><br>
+                </label>
+            </div>
+            <br><input type="submit" class="btn" id="signup-btn" value="Sign Up">
         </form>
     </div>
 </body>
 <%- include('./partials/footer') %>
+
 </html>

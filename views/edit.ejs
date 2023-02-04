@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('./partials/head') %>
+<%-include('./partials/head') %>
+
 <body>
     <%-include('./partials/header')%>
     <%- include('./partials/nav') %>
     <br>
+    <br>
     <a href="/parks/<%= park._id %>">
         <button>
-        Back To <%= park.name %>
+            Back To <%= park.name %>
         </button>
     </a>
     <h1>Editing <%= park.name %></h1>
-    <br>
     <div class="edit-form">
-    <form action="/parks/<%= park._id %>?_method=PUT" method="POST">
-        <div class="edit-box"> 
-            Name: <br><textarea name="name" cols="100" rows="1"><%= park.name %></textarea><br><br>
-            Description:<br><textarea name="description" cols="100" rows="3"><%= park.description %></textarea><br><br>
-            Location:<br><textarea name="location" cols="100" rows="1"><%= park.location %></textarea><br><br>
-            Image (URL): <br><textarea name="img" cols="100" rows="1"><%= park.img %></textarea><br>
-        </div>
-        <br><input type="submit" class="btn" value="Submit Changes">
-            
-    </form>
+        <form action="/parks/<%= park._id %>?_method=PUT" method="POST">
+            <div class="edit-box">
+                <label>
+                    Park Name: <br><textarea name="name" cols="100" rows="1"><%= park.name %></textarea><br><br>
+                </label>
+                <label>
+                    Description:<br><textarea name="description" cols="100"
+                        rows="3"><%= park.description %></textarea><br><br>
+                </label>
+                <label>
+                    Location:<br><textarea name="location" cols="100" rows="1"><%= park.location %></textarea><br><br>
+
+                </label>
+                <label>
+                    Image (URL): <br><textarea name="img" cols="100" rows="1"><%= park.img %></textarea><br>
+                </label>
+            </div>
+            <br><input type="submit" class="btn" id="edit-btn" value="Submit Changes">
+
+        </form>
     </div>
-    
 </body>
-<footer>
-    <p>©Thrill Seekers United</p>
-</footer>
+<%- include('./partials/footer') %>
+
 </html>
