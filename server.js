@@ -60,7 +60,7 @@ function isAuthenticated(req, res, next) {
 };
 
 //mount routes
-app.get('/', (req, res) => res.render('home.ejs'));
+app.get('/', (req, res) => res.render('home.ejs', {tabTitle: "Welcome",}));
 
 app.use(usersRouter);
 app.use(isAuthenticated, parkRouter);

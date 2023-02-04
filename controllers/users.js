@@ -6,7 +6,8 @@ const bcrypt = require('bcrypt');
 //sign up users
 router.get('/signup', (req, res) => {
     res.render('signup.ejs', {
-        error: null
+        error: null,
+        tabTitle: "Sign up",
     });
 });
 
@@ -32,7 +33,8 @@ router.post('/signup', (req, res) => {
 //login users
 router.get('/login', (req, res) => {
     res.render('login.ejs', {
-        error: null
+        error: null,
+        tabTitle: "Login",
     });
 });
 
@@ -43,7 +45,8 @@ router.post('/login', (req, res) => {
     }, (err, foundUser) => {
         if (!foundUser) {
             return res.render('login.ejs', {
-                error
+                error,
+
             });
         }
         const isMatched = bcrypt.compareSync(req.body.password, foundUser.password);

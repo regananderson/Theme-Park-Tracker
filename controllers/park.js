@@ -27,13 +27,17 @@ router.get('/parks', (req, res) => {
     Park.find({}, (error, allParks) => {
         res.render('index.ejs', {
             parks: allParks,
+            tabTitle: 'All Parks',
         });
     });
 });
 
 //new
 router.get('/parks/new', (req, res) => {
-    res.render('new.ejs')
+    res.render('new.ejs',
+    {
+        tabTitle: "Add Park",
+    })
 });
 
 //destroy
@@ -91,6 +95,7 @@ router.get('/parks/:id/edit', (req, res) => {
         console.log(foundPark)
         res.render('edit.ejs', {
             park: foundPark,
+            tabTitle: "Edit",
         });
     });
 });
@@ -105,6 +110,7 @@ router.get('/parks/:id', (req, res) => {
         console.log(foundPark)
         res.render('show.ejs', {
             park: foundPark,
+            tabTitle: "Park",
         });
     });
 });

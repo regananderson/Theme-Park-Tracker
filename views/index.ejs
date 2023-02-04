@@ -9,8 +9,8 @@
     <div class="container">
         <% parks.forEach(park => { %>
         <div class="park">
-            <a href="/parks/<%= park._id; %>">
-                <img src="<%= park.img; %>" alt="" class="index-img">
+            <a href="/parks/<%= park._id %>">
+                <img src="<%= park.img %>" alt="" class="index-img">
                 <br>
                 <%= park.name %>
             </a>
