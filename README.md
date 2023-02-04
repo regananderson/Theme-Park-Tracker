@@ -20,6 +20,7 @@ Theme Park Tracker is a CRUD web application that allows users to view and maint
 - Node.js
 - Express
 - MongoDB
+- Mongoose
 - Heroku
 - Basic Authentication
 - Partials
