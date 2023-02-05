@@ -35,3 +35,6 @@ Recommendation: use chrome for the best experience
 - Users can create a watchlist of their favorite parks
 - Implement OAuth
 - Implement Bootstrap
+
+## Resources
+https://www.wikipedia.org/ used for park photos and descriptions
